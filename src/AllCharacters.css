@@ -1,0 +1,34 @@
+.allCharacterPageTitle {
+  background-color: black;
+  height: 30px;
+  color: white;
+  margin-top: 1px;
+}
+
+.allCharacterName {
+  color: white;
+  font-size: 8px;
+  margin: 20px 5px 10px 5px;
+  background-color: rgb(107, 107, 107);
+  padding: 5px;
+  line-height: 12px;
+  display: flex;
+  justify-content: center;
+  height: 20px;
+}
+
+.allCharacterBox {
+  margin: 0px;
+  line-height: 10px;
+  width: 150px;
+  height: 30px;
+  display: inline-block;
+}
+
+.allContentContainer {
+  width: 80vw;
+  background-color: rgba(0, 0, 0, 0.69);
+  border: 5px solid black;
+  padding-bottom: 50px;
+  padding-top: 10px;
+}

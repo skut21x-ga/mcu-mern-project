@@ -1,0 +1,43 @@
+.characterPageTitle {
+  background-color: black;
+  height: 30px;
+  color: white;
+  margin-top: 1px;
+}
+
+.characterCharacterName {
+  color: white;
+  font-size: 8px;
+  margin: 20px 5px 10px 5px;
+  background-color: rgb(107, 107, 107);
+  padding: 5px;
+  line-height: 12px;
+  display: flex;
+  justify-content: center;
+  height: 20px;
+}
+
+.singleCharacterBox {
+  margin: 0px;
+  line-height: 10px;
+  width: 350px;
+  height: 80px;
+  display: inline-block;
+}
+
+.characterContentContainer {
+  width: 80vw;
+  background-color: rgba(0, 0, 0, 0.8);
+  border: 5px solid black;
+  padding-bottom: 50px;
+  padding-top: 10px;
+}
+
+.name {
+  font-size: 25px;
+  margin: 5px;
+}
+
+.bottomH5 {
+  margin-bottom: -10px;
+}
