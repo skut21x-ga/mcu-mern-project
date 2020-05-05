@@ -6,7 +6,21 @@
 .selectors {
   color: white;
   text-decoration: none;
-  margin-left: 5px;
+  background-color: white;
+}
+
+.alphabetBox {
+  display: flex;
+  justify-content: center;
+  margin-top: -30px;
+}
+
+.viewButton {
+  margin-right: 30px;
+}
+
+.createButton {
+  margin-left: 30px;
 }
 
 html {

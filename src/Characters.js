@@ -22,7 +22,23 @@ class Characters extends Component {
       .then((res) => this.setState({ character: res.data }));
   }
 
-  deleteSong(real_name) {
+  editCharacter(real_name, data) {
+    axios
+      .put(
+        `https://cors-anywhere.herokuapp.com/https://scott-mcu-api.herokuapp.com/name/${real_name}`,
+        { real_name: data },
+        {
+          headers: {
+            "Access-Control-Allow-Origin": "scott-mcu-api.herokuapp.com/",
+          },
+        }
+      )
+      .then((res) => {
+        console.log(res);
+      }, alert("Character Renamed"));
+  }
+
+  deleteCharacter(real_name) {
     let URL = `https://cors-anywhere.herokuapp.com/https://scott-mcu-api.herokuapp.com/name/${real_name}`;
 
     axios
@@ -33,10 +49,7 @@ class Characters extends Component {
       })
       .then((res) => {
         console.log(res);
-      });
-    window.setTimeout(function () {
-      window.location.reload(false);
-    }, 500);
+      }, window.alert(`Character ${real_name} deleted from Database`));
   }
 
   render() {
@@ -165,14 +178,16 @@ class Characters extends Component {
               <h3
                 className="deleteButton"
                 onClick={() =>
-                  this.deleteSong(this.state.character[0].real_name)
+                  this.deleteCharacter(this.state.character[0].real_name)
                 }
               >
                 DELETE CHARACTER
               </h3>
               <h3
                 className="editButton"
-                onClick={() => this.editSong(this.state.character[0].real_name)}
+                onClick={() =>
+                  this.editCharacter(this.state.character[0].real_name)
+                }
               >
                 RENAME CHARACTER
               </h3>
