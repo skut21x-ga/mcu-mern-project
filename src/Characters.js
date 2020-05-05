@@ -22,6 +22,23 @@ class Characters extends Component {
       .then((res) => this.setState({ character: res.data }));
   }
 
+  deleteSong(real_name) {
+    let URL = `https://cors-anywhere.herokuapp.com/https://scott-mcu-api.herokuapp.com/name/${real_name}`;
+
+    axios
+      .delete(URL, {
+        headers: {
+          "Access-Control-Allow-Origin": "scott-mcu-api.herokuapp.com/",
+        },
+      })
+      .then((res) => {
+        console.log(res);
+      });
+    window.setTimeout(function () {
+      window.location.reload(false);
+    }, 500);
+  }
+
   render() {
     let singlecharacter = this.state.character.map((character) => {
       if (character !== null && character.real_name !== "NA") {
@@ -30,6 +47,16 @@ class Characters extends Component {
             className="characterCharacterBox"
             key={this.state.character[0]._id}
           >
+            {" "}
+            <div>
+              <h1
+                onClick={() =>
+                  this.deleteSong(this.state.character[0].real_name)
+                }
+              >
+                X
+              </h1>
+            </div>
             <div className="characterNameBox">
               <h5 className="name">{this.state.character[0].real_name}</h5>
               <h5>

@@ -33,11 +33,11 @@ class AllCharacters extends Component {
       filterCharacter: letter,
       filteredCharacters: filteredCharacter,
     });
+    console.log(this.state.filteredCharacters);
   };
 
   render() {
     const character = this.state.filteredCharacters;
-    console.log(character);
     let allcharacters = this.state.character.map((character) => {
       if (character !== null && character.real_name !== "NA") {
         return (
