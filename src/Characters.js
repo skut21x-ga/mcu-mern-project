@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./Characters.css";
+import axios from "axios";
 
 class Characters extends Component {
   constructor(props) {
@@ -8,12 +9,17 @@ class Characters extends Component {
   }
 
   componentDidMount() {
-    let url =
-      "https://cors-anywhere.herokuapp.com/https://scott-mcu-api.herokuapp.com/name/" +
-      this.props.match.params.name;
-    fetch(url, {})
-      .then((res) => res.json())
-      .then((res) => this.setState({ character: res }));
+    axios
+      .get(
+        "https://cors-anywhere.herokuapp.com/https://scott-mcu-api.herokuapp.com/name/" +
+          this.props.match.params.name,
+        {
+          headers: {
+            "Access-Control-Allow-Origin": "scott-mcu-api.herokuapp.com/name",
+          },
+        }
+      )
+      .then((res) => this.setState({ character: res.data }));
   }
 
   render() {

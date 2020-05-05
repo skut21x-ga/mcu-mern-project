@@ -1,11 +1,19 @@
 {
   "name": "mcu-mern-project",
-  "version": "0.1.0",
-  "private": true,
+  "version": "0.1.1",
+  "private": false,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "axios": "^0.19.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "jwt-simple": "^0.5.6",
+    "mongoose": "^5.0.10",
+    "parser": "^0.1.4",
+    "passport": "^0.4.1",
+    "passport-jwt": "^4.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router": "^5.1.2",
@@ -32,5 +40,18 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "index.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skut21x-ga/mcu-mern-project.git"
+  },
+  "author": "scott kutler",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/skut21x-ga/"
+  },
+  "homepage": "https://github.com/skut21x-ga"
 }

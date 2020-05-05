@@ -7,7 +7,9 @@ import { Route, Link } from "react-router-dom";
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { character: [null] };
+    this.state = {
+      character: [null],
+    };
   }
 
   render() {
@@ -26,7 +28,8 @@ class App extends Component {
         </h3>
         <div className="Body">
           <div className="ContentContainer">
-            <Route path="/" exact component={AllCharacters} />
+            {" "}
+            <Route path="/" exact component={AllCharacters} />{" "}
             <Route path="/name/:name" exact component={Characters} />
           </div>
         </div>

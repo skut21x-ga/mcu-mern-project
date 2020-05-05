@@ -1,11 +1,16 @@
 import React, { Component } from "react";
 import "./AllCharacters.css";
 import { Route, Link } from "react-router-dom";
+import Alphabet from "./Alphabet/Alphabet";
 
 class AllCharacters extends Component {
   constructor(props) {
     super(props);
-    this.state = { character: [null] };
+    this.state = {
+      selection: [],
+      character: [null],
+      filteredCharacters: [],
+    };
   }
 
   componentDidMount() {
@@ -17,8 +22,22 @@ class AllCharacters extends Component {
       .then((res) => this.setState({ character: res }));
   }
 
+  filterCharacter = (letter) => {
+    console.log(letter, "clicked from the ALL Character component ");
+    let filteredCharacter = this.state.character.filter((character) => {
+      return (
+        character.Character.toLowerCase().charAt(0) === letter.toLowerCase()
+      );
+    });
+    this.setState({
+      filterCharacter: letter,
+      filteredCharacters: filteredCharacter,
+    });
+  };
+
   render() {
-    console.log("MOUNTED CHARACTERS");
+    const character = this.state.filteredCharacters;
+    console.log(character);
     let allcharacters = this.state.character.map((character) => {
       if (character !== null && character.real_name !== "NA") {
         return (
@@ -35,6 +54,9 @@ class AllCharacters extends Component {
 
     return (
       <div className="AllContentContainer">
+        <div className="alphabetBox">
+          <Alphabet letterSelector={this.filterCharacter} />{" "}
+        </div>
         <div>
           <div className="allContentContainer">{allcharacters}</div>
         </div>
