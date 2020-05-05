@@ -14,9 +14,11 @@ class AllCharacters extends Component {
   }
 
   componentDidMount() {
-    let url =
-      "https://cors-anywhere.herokuapp.com/https://scott-mcu-api.herokuapp.com/";
-    // { route };
+    let url = "http://localhost:8080/";
+    /* ("https://cors-anywhere.herokuapp.com/https://scott-mcu-api.herokuapp.com/");
+    {
+      // mode: "no-cors";
+    } */
     fetch(url, {})
       .then((res) => res.json())
       .then((res) => this.setState({ character: res }));
@@ -38,6 +40,7 @@ class AllCharacters extends Component {
 
   render() {
     const character = this.state.filteredCharacters;
+    console.log(this.state.character);
     let allcharacters = this.state.character.map((character) => {
       if (character !== null && character.real_name !== "NA") {
         return (

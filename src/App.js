@@ -14,22 +14,22 @@ class App extends Component {
     };
   }
 
-  createCharacter(data) {
-    axios
-      .post(
-        `https://cors-anywhere.herokuapp.com/https://scott-mcu-api.herokuapp.com`,
-        { Name: data.real_name, Title: data.title, Species: data.species },
-        {
-          headers: {
-            "Access-Control-Allow-Origin": "scott-mcu-api.herokuapp.com/",
-          },
-        }
-      )
-      .then((res) => {
-        console.log(res);
-      });
-    alert("New Song Created in Database");
-  }
+  // createCharacter(data) {
+  //   axios
+  //     .post(
+  //       `https://cors-anywhere.herokuapp.com/https://scott-mcu-api.herokuapp.com`,
+  //       { Name: data.real_name, Title: data.title, Species: data.species }
+  //              {
+  //         headers: {
+  //           "Access-Control-Allow-Origin": "scott-mcu-api.herokuapp.com/",
+  //         }, */
+  //        } */
+  //     )
+  //     .then((res) => {
+  //       console.log(res);
+  //     });
+  //   alert("New Song Created in Database");
+  // }
   render() {
     return (
       <div className="App">

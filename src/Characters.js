@@ -11,12 +11,13 @@ class Characters extends Component {
   componentDidMount() {
     axios
       .get(
-        "https://cors-anywhere.herokuapp.com/https://scott-mcu-api.herokuapp.com/name/" +
-          this.props.match.params.name,
+        "http://localhost:8080/" + this.props.match.params.name,
+        // "https://cors-anywhere.herokuapp.com/https://scott-mcu-api.herokuapp.com/name/" +
+        //   this.props.match.params.name,
         {
-          headers: {
+          /*  headers: {
             "Access-Control-Allow-Origin": "scott-mcu-api.herokuapp.com/name",
-          },
+          }, */
         }
       )
       .then((res) => this.setState({ character: res.data }));
@@ -29,7 +30,7 @@ class Characters extends Component {
         { real_name: data },
         {
           headers: {
-            "Access-Control-Allow-Origin": "scott-mcu-api.herokuapp.com/",
+            // "Access-Control-Allow-Origin": "scott-mcu-api.herokuapp.com/",
           },
         }
       )
@@ -43,9 +44,9 @@ class Characters extends Component {
 
     axios
       .delete(URL, {
-        headers: {
-          "Access-Control-Allow-Origin": "scott-mcu-api.herokuapp.com/",
-        },
+        //       headers: {
+        //  /*        "Access-Control-Allow-Origin": "scott-mcu-api.herokuapp.com/",
+        //       }, */
       })
       .then((res) => {
         console.log(res);
