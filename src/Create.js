@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import axios from "axios";
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import "./Create.css";
@@ -22,10 +21,13 @@ export default function CharacterForm() {
   const [real_name, setName] = React.useState("");
   const [species, setSpecies] = React.useState("");
   const [alias, setAlias] = React.useState("");
+  const [affiliation, setAffiliation] = React.useState("");
+
   const valueUpdateMap = {
     real_name: setName,
     species: setSpecies,
     alias: setAlias,
+    affiliation: setAffiliation,
   };
   const updateText = (event, type) => {
     event.persist();
@@ -34,7 +36,7 @@ export default function CharacterForm() {
   };
 
   const newCharacter = () => {
-    createCharacter({ real_name, species, alias });
+    createCharacter({ real_name, species, alias, affiliation });
   };
 
   return (
@@ -64,6 +66,14 @@ export default function CharacterForm() {
               label="Alias"
               variant="standard"
               onKeyUp={(event) => updateText(event, "alias")}
+            />
+          </div>
+          <div className="createInput">
+            <TextField
+              className="createTextField4"
+              label="Affiliation"
+              variant="standard"
+              onKeyUp={(event) => updateText(event, "affiliation")}
             />
           </div>
         </div>

@@ -16,7 +16,7 @@
   background-color: rgba(250, 250, 250, 0.899);
   padding-bottom: 30px;
   padding-top: 10px;
-  height: 37%;
+  height: 46%;
   border: 5px solid black;
 }
 
@@ -35,6 +35,10 @@
 }
 
 .createTextField3 {
+  color: white;
+  width: 300px;
+}
+.createTextField4 {
   color: white;
   width: 300px;
 }
