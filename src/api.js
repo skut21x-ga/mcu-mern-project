@@ -26,8 +26,8 @@ export function updateCharacter(real_name, data) {
   if (data.length >= 1) {
     axios
       .put(
-        `hhttps://scott-mcu-api.herokuapp.com/name/${real_name}`,
-        { Character: data },
+        `https://scott-mcu-api.herokuapp.com/name/${real_name}`,
+        { real_name: data },
         {
           headers: {
             "Access-Control-Allow-Origin": "scott-mcu-api.herokuapp.com/",
@@ -35,7 +35,7 @@ export function updateCharacter(real_name, data) {
         }
       )
       .then((res) => {
-        console.log(res);
+        console.log(res), console.log(data);
       });
     window.setTimeout(function () {
       window.location.reload(false);
