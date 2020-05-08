@@ -24,6 +24,7 @@ export function createCharacter(data) {
 
 export function updateCharacter(real_name, data) {
   if (data.length >= 1) {
+    console.log(data);
     axios
       .put(
         `https://scott-mcu-api.herokuapp.com/name/${real_name}`,
@@ -34,9 +35,7 @@ export function updateCharacter(real_name, data) {
           },
         }
       )
-      .then((res) => {
-        console.log(res), console.log(data);
-      });
+      .then((res) => {});
     window.setTimeout(function () {
       window.location.reload(false);
     }, 500);
