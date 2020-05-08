@@ -22,11 +22,13 @@ class Characters extends Component {
       .then((res) => this.setState({ character: res.data }));
   }
 
-  editCharacter(real_name, data) {
+  editCharacter(real_name, rename) {
+    console.log(real_name);
+    console.log(rename);
     axios
       .put(
         `https://cors-anywhere.herokuapp.com/https://scott-mcu-api.herokuapp.com/name/${real_name}`,
-        { real_name: data },
+        { real_name: rename },
         {
           headers: {
             "Access-Control-Allow-Origin": "scott-mcu-api.herokuapp.com/",
@@ -53,14 +55,17 @@ class Characters extends Component {
   }
 
   changeHandles = (e) => {
-    this.setState({ real_name: e.target.value });
-    console.log(this.state.real_name);
+    this.setState({ data: e.target.value });
+    console.log(this.state.character[0].real_name);
+    console.log(this.state.data);
   };
 
   submitHandler = (e) => {
     e.preventDefault();
-    if (this.state.real_name.length >= 1) {
-      this.editCharacter(this.state.real_name);
+    if (this.state.data.length >= 1) {
+      this.editCharacter(this.state.character[0].real_name, this.state.data);
+      console.log(this.state.character[0].real_name);
+      console.log(this.state.data);
     }
   };
 
@@ -252,7 +257,10 @@ class Characters extends Component {
               <h3
                 className="editButton"
                 onClick={() =>
-                  this.editCharacter(this.state.character[0].real_name)
+                  this.editCharacter(
+                    this.state.character[0].real_name,
+                    this.state.data
+                  )
                 }
               >
                 RENAME CHARACTER
