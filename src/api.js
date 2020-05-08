@@ -3,7 +3,7 @@ import axios from "axios";
 export function createCharacter(data) {
   axios
     .post(
-      `https://scott-mcu-api.herokuapp.com/`,
+      `https://cors-anywhere.herokuapp.com/https://scott-mcu-api.herokuapp.com/`,
       {
         real_name: data.real_name,
         alias: data.alias,
