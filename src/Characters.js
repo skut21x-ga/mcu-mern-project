@@ -52,6 +52,18 @@ class Characters extends Component {
       }, window.alert(`Character ${real_name} deleted from Database`));
   }
 
+  changeHandles = (e) => {
+    this.setState({ real_name: e.target.value });
+    console.log(this.state.real_name);
+  };
+
+  submitHandler = (e) => {
+    e.preventDefault();
+    if (this.state.real_name.length >= 1) {
+      this.editCharacter(this.state.real_name);
+    }
+  };
+
   render() {
     let singlecharacter = this.state.character.map((character) => {
       if (character !== null && character.real_name !== "NA") {
@@ -224,7 +236,19 @@ class Characters extends Component {
                 }
               >
                 DELETE CHARACTER
-              </h3>
+              </h3>{" "}
+            </div>
+            <div className="renameForm">
+              <form onSubmit={this.submitHandler}>
+                <div className="editName">
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="  New Character Name"
+                    onChange={this.changeHandles}
+                  />
+                </div>
+              </form>
               <h3
                 className="editButton"
                 onClick={() =>
