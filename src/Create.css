@@ -1,0 +1,44 @@
+.characterPageTitle {
+  background-color: black;
+  height: 30px;
+  margin-top: 1px;
+}
+
+.createCharacter {
+  color: black;
+}
+
+.CreateBoxes {
+  color: white;
+  width: 50vw;
+  display: flex;
+  justify-content: center;
+  background-color: rgba(250, 250, 250, 0.899);
+  padding-bottom: 30px;
+  padding-top: 10px;
+  height: 37%;
+  border: 5px solid black;
+}
+
+.createTextField1 {
+  color: white;
+  width: 300px;
+}
+
+.createInput {
+  margin-bottom: 25px;
+}
+
+.createTextField2 {
+  color: white;
+  width: 300px;
+}
+
+.createTextField3 {
+  color: white;
+  width: 300px;
+}
+
+.submitButton {
+  margin-top: 10px;
+}
