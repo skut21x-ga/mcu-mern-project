@@ -19,7 +19,7 @@ export function createCharacter(data) {
     .then((res) => {
       console.log(res);
     });
-  // alert("New Character Created in Database");
+  alert("New Character Created in Database");
 }
 
 export function updateCharacter(real_name, data) {
