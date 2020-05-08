@@ -23,8 +23,6 @@ class Characters extends Component {
   }
 
   editCharacter(real_name, rename) {
-    console.log(real_name);
-    console.log(rename);
     axios
       .put(
         `https://cors-anywhere.herokuapp.com/https://scott-mcu-api.herokuapp.com/name/${real_name}`,
@@ -56,16 +54,12 @@ class Characters extends Component {
 
   changeHandles = (e) => {
     this.setState({ data: e.target.value });
-    console.log(this.state.character[0].real_name);
-    console.log(this.state.data);
   };
 
   submitHandler = (e) => {
     e.preventDefault();
     if (this.state.data.length >= 1) {
       this.editCharacter(this.state.character[0].real_name, this.state.data);
-      console.log(this.state.character[0].real_name);
-      console.log(this.state.data);
     }
   };
 
