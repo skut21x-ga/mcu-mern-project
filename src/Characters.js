@@ -54,10 +54,7 @@ class Characters extends Component {
 
   render() {
     let singlecharacter = this.state.character.map((character) => {
-      if (
-        character !== null &&
-        (character.real_name !== "NA" || character.real_name !== undefined)
-      ) {
+      if (character !== null && character.real_name !== "NA") {
         return (
           <div className="singleComponent">
             <div

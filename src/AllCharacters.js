@@ -49,7 +49,11 @@ class AllCharacters extends Component {
     // const character = this.state.filteredCharacters;
     console.log(this.state.character);
     let allcharacters = this.state.filteredCharacters.map((character) => {
-      if (character !== null && character.real_name !== "NA") {
+      if (
+        character !== null &&
+        character.real_name !== "NA" &&
+        character.real_name !== undefined
+      ) {
         return (
           <div className="allCharacterBox" key={character._id}>
             <Link to={"/name/" + character.real_name}>
